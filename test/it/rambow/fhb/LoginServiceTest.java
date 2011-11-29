@@ -12,13 +12,13 @@ import static org.easymock.EasyMock.verify;
 import static org.easymock.EasyMock.*;
 
 public class LoginServiceTest {
-	private LoginServiceImpl service;
+	private LoginService service;
     private UserDAO userDAOMock;
 
 
 	@Before
 	public void setUp() throws Exception {
-        service = new LoginServiceImpl();
+        service = new LoginService();
         //create a mock
         userDAOMock = createStrictMock(UserDAO.class);
         //inject dependency
