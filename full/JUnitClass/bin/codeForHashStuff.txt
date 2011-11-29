@@ -1,20 +1,0 @@
-password = "p@ssw0rd";
-hash = "5—@½Ú™O‹U3†ØE";
-
-
-	@Override
-	public boolean isValidUser(String userName, String password) {
-		User results = null;
-		
-		try {
-			String passwordHash = null;
-			MessageDigest md5 = MessageDigest.getInstance("MD5");
-			md5.update(password.getBytes());
-			passwordHash = new String(md5.digest());
-			
-			results = loginDAO.loadByLogin(userName, passwordHash);
-		} catch (Throwable ignore) {
-		}
-		
-		return results != null;
-	}
